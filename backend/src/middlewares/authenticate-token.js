@@ -7,6 +7,7 @@ const authenticateToken = (req, res, next) => {
   const refreshToken = req.cookies.refreshToken;
 
   if (!accessToken || !refreshToken) {
+    console.log("error in access token")
     throw new ApiError(401, "Unauthorized. Please provide valid tokens.");
   }
 
